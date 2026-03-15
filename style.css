@@ -1,0 +1,362 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --bg-color: #0b0f19;       /* Deep Space Blue */
+    --second-bg: #161e2d;      /* Slate Blue */
+    --text-color: #f8fafc;
+    --main-color: #38bdf8;     /* Cyan Cloud */
+    --accent-color: #818cf8;   /* Soft Purple */
+    --gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* --- Header / Navbar --- */
+header {
+    position: fixed;
+    width: 100%;
+    background: rgba(11, 15, 25, 0.85);
+    backdrop-filter: blur(10px); /* تأثير الزجاج */
+    padding: 15px 10%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span { color: var(--main-color); }
+
+nav ul { display: flex; list-style: none; }
+
+nav ul li { margin-left: 25px; }
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover { color: var(--main-color); }
+
+/* --- Hero Section (The "Bariz" look) --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #1e293b 0%, #0b0f19 100%);
+    padding: 0 10%;
+}
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 3px solid var(--main-color);
+    padding: 5px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite; /* حركة عائمة */
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.hero h1 {
+    font-size: clamp(40px, 8vw, 70px); /* حجم خط كبير وبارز */
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.hero .highlight {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #94a3b8;
+    max-width: 600px;
+}
+
+.social-links {
+    .social-links {
+    margin: 25px 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center; /* هذا السطر هو السر في التوسيط */
+    width: 100%;
+}
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--main-color);
+    transform: scale(1.2);
+}
+
+.resume-link {
+    font-size: 14px !important;
+    background: rgba(56, 189, 248, 0.1);
+    padding: 8px 18px;
+    border-radius: 30px;
+    border: 1px solid var(--main-color);
+    text-decoration: none;
+}
+
+/* --- Skills Grid (Compact & Visual) --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); /* مرونة عالية بجانب بعضهم */
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.skill-box {
+    background: var(--second-bg);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: 0.3s;
+}
+
+.skill-box i {
+    font-size: 28px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.skill-box span {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.skill-box:hover {
+    background: #1e293b;
+    border-color: var(--main-color);
+    transform: translateY(-5px);
+}
+
+/* --- Section Titles --- */
+section { padding: 80px 10%; }
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* --- Projects & Timeline (Clean-up) --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: var(--second-bg);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-color: var(--accent-color);
+}
+
+.timeline-content {
+    background: var(--second-bg);
+    padding: 20px;
+    border-radius: 12px;}
+
+    .hero .btn {
+    display: inline-block;
+    margin-top: 30px;
+    color: var(--main-color); /* اللون اللبني الواضح */
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid var(--main-color);
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.hero .btn:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+
+}
+
+/* --- Contact Section Styles --- */
+.contact {
+    background-color: var(--second-bg);
+    text-align: center;
+    padding: 100px 10% !important;
+}
+
+.contact-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-msg {
+    color: #94a3b8;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: var(--main-color);
+}
+
+.contact-item a, .contact-item span {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.contact-item a:hover {
+    color: var(--main-color);
+}
+
+/* --- Improved Footer --- */
+footer {
+    padding: 40px 10%;
+    background: var(--bg-color);
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    font-size: 12px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- About Section Fix --- */
+.about-container {
+    text-align: center; /* توسيط الكلام */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-description {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #cbd5e1;
+    margin-bottom: 30px;
+}
+
+.core-expertise h3 {
+    color: var(--main-color);
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+/* --- Services Cards Fix (بجانب بعضهم) --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* يخليهم بجانب بعض */
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background: var(--second-bg);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center; /* توسيط محتوى الكارت */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.4s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--main-color);
+    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1);
+}
+
+.service-card i {
+    font-size: 45px;
+    color: var(--main-color);
+    margin-bottom: 20px;
+    display: block; /* لضمان إن الأيقونة في سطر لوحدها وتتوسط */
+}
+
+.service-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.service-card p {
+    font-size: 15px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
